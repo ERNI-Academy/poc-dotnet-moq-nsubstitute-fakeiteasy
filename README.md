@@ -111,7 +111,7 @@ Advantages
  
 Disadvantages
 
--Not the same traction as the other two frameworks
+- Not the same traction as the other two frameworks
 
 
 ## Installation
@@ -133,13 +133,13 @@ Installation instructions {{ Name }} by running:
 3. build
 
     ```sh
-    dotnet build;
+    dotnet build
     ```
 
 4. test
 
     ```sh
-    dotnet test;
+    dotnet test
     ```
     
 
