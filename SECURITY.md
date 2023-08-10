@@ -16,7 +16,7 @@ make every effort to acknowledge your contributions.
 
 Report security vulnerabilities by emailing the ERNI-Academy security team at:
 
-    academy@betterask.erni
+    esp-services@betterask.erni
 
 The lead maintainer will acknowledge your email, and will
 send a more detailed response indicating the next steps in

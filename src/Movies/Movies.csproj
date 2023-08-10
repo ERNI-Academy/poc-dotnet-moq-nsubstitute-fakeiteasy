@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<!--This code is to prevent https://github.com/moq/moq/issues/1372#issuecomment-1671416922 when update nuget packages-->
+	<Target Name="CheckBlockedPackages" AfterTargets="ResolvePackageDependenciesForBuild">
+		<Error Code="420" Text="Blocked package dependency detected: %(PackageDependencies.Identity)" Condition="'%(PackageDependencies.Identity)' == 'Devlooped.SponsorLink'" />
+	</Target>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

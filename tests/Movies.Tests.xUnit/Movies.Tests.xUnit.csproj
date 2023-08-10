@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<!--This code is to prevent https://github.com/moq/moq/issues/1372#issuecomment-1671416922 when update nuget packages-->
+	<Target Name="CheckBlockedPackages" AfterTargets="ResolvePackageDependenciesForBuild">
+		<Error Code="420" Text="Blocked package dependency detected: %(PackageDependencies.Identity)" Condition="'%(PackageDependencies.Identity)' == 'Devlooped.SponsorLink'" />
+	</Target>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="FakeItEasy" Version="7.4.0" />
+	  <PackageReference Include="Moq" Version="4.18.4" />
+	  <PackageReference Include="NSubstitute" Version="5.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.0" />
+    <PackageReference Include="xunit" Version="2.5.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Movies.Tests\Movies.Tests.csproj" />
+  </ItemGroup>
+</Project>
